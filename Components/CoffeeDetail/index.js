@@ -12,16 +12,33 @@ import {
   List,
   ListItem,
   Picker,
-  Content
+  Content,
+  Icon
 } from "native-base";
 
 // Style
 import styles from "./styles";
 
-//Store
+// Store
 import CoffeeStore from "../../store/coffeeStore";
 
+// Component
+import list from "../CoffeeList/list";
+
 class CoffeeDetail extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam("coffeeshop").name,
+      headerRight: (
+        <Icon
+          type="FontAwesome"
+          name="shopping-cart"
+          onPress={() => navigation.navigate("Cart")}
+        />
+      )
+    };
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -43,9 +60,8 @@ class CoffeeDetail extends Component {
   }
 
   render() {
-    const coffeeshops = CoffeeStore.coffeeshops;
-    if (!coffeeshops) return <Content />;
-    const coffeeshop = coffeeshops[0];
+    let coffeeshop = this.props.navigation.getParam("coffeeshop");
+    if (!coffeeshop) return <Content />;
     return (
       <Content>
         <List>

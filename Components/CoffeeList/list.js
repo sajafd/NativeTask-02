@@ -29,7 +29,7 @@ var list = [
 
   {
     id: 3,
-    name: "Caribu",
+    name: "Caribou",
     location: "Salmiya",
     distance: "500 meters",
     image: carribu,

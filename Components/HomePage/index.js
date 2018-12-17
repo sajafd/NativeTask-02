@@ -12,6 +12,7 @@ import CoffeeList from "../CoffeeList";
 import CoffeeCart from "../CoffeeCart";
 import CoffeeDetail from "../CoffeeDetail";
 import Login from "../Login";
+import OurStack from "../Navigation";
 
 class HomePage extends Component {
   render() {
@@ -19,7 +20,7 @@ class HomePage extends Component {
       <Container style={styles.transparent}>
         <View style={styles.overlay} />
         <Header style={styles.transparent} />
-        <CoffeeCart />
+        <OurStack />
       </Container>
     );
   }

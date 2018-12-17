@@ -2,7 +2,7 @@ import React from "react";
 import Expo, { AppLoading } from "expo";
 
 // Component
-import HomePage from "./Components/HomePage";
+import OurStack from "./Components/Navigation";
 
 class App extends React.Component {
   constructor() {
@@ -23,7 +23,7 @@ class App extends React.Component {
     if (!this.state.fontsAreLoaded) {
       return <AppLoading />;
     }
-    return <HomePage />;
+    return <OurStack />;
   }
 }
 
